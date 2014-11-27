@@ -2,13 +2,19 @@
 
 a [brainfuck](http://en.wikipedia.org/wiki/Brainfuck) interpreter
 
-**Usage**
+#### Building
+
+bf is written in Go.  The entire interpreter is in a single `main.go` file.  Just run `go build` and you're done.
+
+#### Usage
 
 	./bf [-m memory-size] input-file
 
 The default memory size is 30,000 bytes.
 
-**Instructions**
+#### Language
+
+The entire language is built on 8 single-character commands.
 
 | Symbol | Effect                                            |
 |:------:|:--------------------------------------------------|
@@ -22,11 +28,3 @@ The default memory size is 30,000 bytes.
 |   `]`  | if data at pointer ≠ 0, jump back to matching `[` |
 
 If `[`s and `]`s don't match, the program is invalid.
-
-## Implementation
-
-- The entire input file is read into memory.
-- The program is checked for matching brackets.
-- The memory buffer is allocated.
-- The data pointer is set to zero.
-- The instruction pointer is set to zero.
